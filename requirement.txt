@@ -1,0 +1,15 @@
+python=3.6
+cuda=11.1
+torch=1.8.1
+VC=2017 (14.1)
+
+# Scratch 학습
+python main.py --optimizer_lr=1e-4
+
+# 이어서 학습
+python main.py --optimizer_lr=1e-4 --resume ./work/FlowNet2_model_best.pth
+
+# 추론해서 결과 저장
+python main.py --inference --inference_visualize --render_validation --resume ./work/FlowNet2_model_best.pth
+
+tensorboard --logdir train

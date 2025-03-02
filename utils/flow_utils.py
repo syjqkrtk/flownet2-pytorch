@@ -54,7 +54,7 @@ def writeFlow(filename,uv,v=None):
     tmp[:,np.arange(width)*2] = u
     tmp[:,np.arange(width)*2 + 1] = v
     tmp.astype(np.float32).tofile(f)
-    f.close()
+    f.close()    
 
 
 # ref: https://github.com/sampepose/flownet2-tf/
@@ -65,7 +65,7 @@ def visulize_flow_file(flow_filename, save_dir=None):
 	# plt.imshow(img)
 	# plt.show()
 	if save_dir:
-		idx = flow_filename.rfind("/") + 1
+		idx = flow_filename.rfind("\\") + 1
 		plt.imsave(os.path.join(save_dir, "%s-vis.png" % flow_filename[idx:-4]), img)
 
 
